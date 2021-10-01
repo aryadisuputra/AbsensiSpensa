@@ -118,7 +118,7 @@ angular.module('app.authentification', [])
             Swal.fire({
               title: 'Absensi Gagal!',
               text: 'Akun Belum Terdata',
-              icon: 'success',
+              icon: 'danger',
               showCancelButton: false,
               showConfirmButton: false
             })
