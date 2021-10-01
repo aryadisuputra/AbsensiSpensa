@@ -2,30 +2,70 @@
   <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
     <style>
       body {
-        background-image: url(img/unnamed.jpg);
-        background-size: cover;
+        background: rgb(56, 126, 245);
+        background: -moz-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#387ef5", endColorstr="#326ed2", GradientType=1);
       }
-    </style>
-    <h1 style="text-align: center; margin-top: 10px;">Absensi Siswa SMP Negeri 1 Singaraja</h1>
 
-    <div class="container-fluid">
-      <div class="container logoSkl">
-        <img class="logoSk" src="img/logospensa.png" alt="">
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: white
+      }
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+    </style>
+    <div class="center">
+      <div class="container-fluid">
+        <div class="container logoSkl">
+          <img class="logoSk" src="img/logospensa.png" alt="">
+        </div>
+      </div>
+      <div class="m-5">
+        <h4 class="text-center">ABSENSI SISWA</h4>
+        <h4 class="text-center">SMP Negeri 1 Singaraja</h4>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <a class="btn btn-lg btn-light" ng-click="alat1()">Alat 1</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-lg btn-light" ng-click="alat2()">Alat 2</a>
+          </div>
+          <div class="col">
+            <a class="btn btn-lg btn-light" ng-click="alat3()">Alat 3</a>
+          </div>
+        </div>
+        <!-- <center>
+          <div id="tombolqr" class="container-qr">
+            <a class="btn btn-lg btn-light" ng-click="alat1()">Alat 1</a>
+          </div>
+          <br>
+          <div id="tombolqr" class="container-qr">
+            <a class="btn btn-lg btn-light" ng-click="alat2()">Alat 2</a>
+          </div>
+          <br>
+          <div id="tombolqr" class="container-qr">
+            <a class="btn btn-lg btn-light" ng-click="alat3()">Alat 3</a>
+          </div>
+        </center> -->
+
       </div>
     </div>
-    <div class="container-fluid">
-      <br>
-      <div id="tombolqr" class="container-qr">
-        <a ng-click="alat1()"><h1 style="text-align: center;">Alat 1</h1></a>
-      </div>
-      <br>
-      <div id="tombolqr" class="container-qr">
-        <a ng-click="alat2()"><h1 style="text-align: center;">Alat 2</h1></a>
-      </div>
-      <br>
-      <div id="tombolqr" class="container-qr">
-        <a ng-click="alat3()"><h1 style="text-align: center;">Alat 3</h1></a>
-      </div>
-    </div>
+
   </ion-content>
 </ion-view>

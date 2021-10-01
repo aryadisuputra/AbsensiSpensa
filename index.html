@@ -59,6 +59,7 @@
   <script src="templates/user/dashboard.js"></script>
 
   <script src="templates/admin/authAdmin.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
@@ -83,13 +84,28 @@
   <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
   <script src="js/loadBalancing.js"></script>
   <script src="cordova.js"></script>
-  <style type="text/css" media="print">
+  <!-- <style type="text/css" media="print">
     .no-print {
       display: none;
     }
-  </style>
+  </style> -->
 
   <style>
+          .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+          body {
+        background: rgb(56, 126, 245);
+        background: -moz-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#387ef5", endColorstr="#326ed2", GradientType=1);
+      }
     .dropbtn {
       /* background-color: #04AA6D; */
       color: white;

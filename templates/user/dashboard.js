@@ -69,16 +69,25 @@ angular.module('app.dashboardAbsen', [])
                             kelas: $scope.formData.kelas,
                         })
                             .then(function () {
-                                $("#modal_tambah").modal();
+                                Swal.fire({
+                                    title: 'Absensi Berhasil!',
+                                    text: 'Suhu Anda :' + $scope.suhu,
+                                    icon: 'success',
+                                    showCancelButton: false,
+                                    showConfirmButton: false
+                                  })
+                                // $("#modal_tambah").modal();
                                 $ionicLoading.hide();
                                 var delayInMilliseconds = 3000; //1 second
+                                
                                 setTimeout(function() {
                                     //your code to be executed after 1 second
                                     firebase.database().ref('DHT22/temp').update({
                                         suhu: '0',
                                     }).then(function () {
                                         // $("#modal_tambah").modal('fade')
-                                        $("#modal_tambah").modal('hide')
+                                        // $("#modal_tambah").modal('hide')
+                                        Swal.close();
                                         $state.go('alat1');
                                     })
                                 }, delayInMilliseconds);
@@ -195,7 +204,14 @@ angular.module('app.dashboardAbsen', [])
                             kelas: $scope.formData.kelas,
                         })
                             .then(function () {
-                                $("#modal_tambah").modal();
+                                Swal.fire({
+                                    title: 'Absensi Berhasil!',
+                                    text: 'Suhu Anda :' + $scope.suhu,
+                                    icon: 'success',
+                                    showCancelButton: false,
+                                    showConfirmButton: false
+                                  })
+                                // $("#modal_tambah").modal();
                                 $ionicLoading.hide();
                                 var delayInMilliseconds = 3000; //1 second
                                 setTimeout(function() {
@@ -204,7 +220,8 @@ angular.module('app.dashboardAbsen', [])
                                         suhu: '0',
                                     }).then(function () {
                                         // $("#modal_tambah").modal('fade')
-                                        $("#modal_tambah").modal('hide')
+                                        // $("#modal_tambah").modal('hide')
+                                        Swal.close();
                                         $state.go('alat2');
                                     })
                                 }, delayInMilliseconds);
@@ -321,7 +338,14 @@ angular.module('app.dashboardAbsen', [])
                             kelas: $scope.formData.kelas,
                         })
                             .then(function () {
-                                $("#modal_tambah").modal();
+                                Swal.fire({
+                                    title: 'Absensi Berhasil!',
+                                    text: 'Suhu Anda :' + $scope.suhu,
+                                    icon: 'success',
+                                    showCancelButton: false,
+                                    showConfirmButton: false
+                                  })
+                                // $("#modal_tambah").modal();
                                 $ionicLoading.hide();
                                 var delayInMilliseconds = 3000; //1 second
                                 setTimeout(function() {
@@ -330,7 +354,8 @@ angular.module('app.dashboardAbsen', [])
                                         suhu: '0',
                                     }).then(function () {
                                         // $("#modal_tambah").modal('fade')
-                                        $("#modal_tambah").modal('hide')
+                                        // $("#modal_tambah").modal('hide')
+                                        Swal.close();
                                         $state.go('alat3');
                                     })
                                 }, delayInMilliseconds);

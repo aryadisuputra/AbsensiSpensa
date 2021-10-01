@@ -31,11 +31,11 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
-.camera #scanan{
+/* .camera #scanan{
     margin-left: 20%;
     margin-right: 20%;
     display: block;
-}
+} */
 
 .imgQr{
     width: 180px;

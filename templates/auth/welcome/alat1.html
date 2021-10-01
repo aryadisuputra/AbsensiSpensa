@@ -1,4 +1,4 @@
-<ion-view title="Absensi Siswa" hide-nav-bar="true" cache-view="false" id="welcome">
+<!-- <ion-view title="Absensi Siswa" hide-nav-bar="true" cache-view="false" id="welcome">
     <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
   
       <style>
@@ -7,20 +7,13 @@
       background-size: cover;
   }
       </style>
-      <h1 style="text-align: center; margin-top: 10px;">Absensi Siswa SMP Negeri 1 Singaraja</h1>
-  
-      <div class="container-fluid">
-          <div class="container logoSkl">
-              <img class="logoSk" src="img/logospensa.png" alt="">
-          </div>
-      </div>
-  
-      <div class="container-fluid">
+      <div class="center">
+        <div class="container-fluid">
           <div id="tombolqr"class="container-qr">
-              <!-- <a ng-click = "scanqr()"><img class="imgQr" src="img/qrcontoh.png" alt=""></a> -->
+     
           </div>
-          <br>
-          <div class="container camera">
+
+          <div class="container-fluid camera">
             <div  id="scanan" hidden="">
               <canvas id="qr-canvas"></canvas>
               <div  class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
@@ -28,11 +21,88 @@
               <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
               <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
   
-              <button ng-click = "batalscan()" type="button" class="btn btn-danger">Batal</button>
+        
               <span id="outputData" ></span>
           </div>
+          <button ng-click = "batalscan()" type="button" class="btn btn-danger">Batal</button>
           </div>
       </div>
+      </div>
+
   
     </ion-content>
-  </ion-view>
+  </ion-view> -->
+<ion-view title="Absensi Siswa" hide-nav-bar="true" cache-view="false" id="welcome">
+  <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+    <style>
+      body {
+        background: rgb(56, 126, 245);
+        background: -moz-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        background: linear-gradient(180deg, rgba(56, 126, 245, 1) 0%, rgba(50, 110, 210, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#387ef5", endColorstr="#326ed2", GradientType=1);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: white
+      }
+
+      .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      .scanner-laser{
+        color:white;
+        background-color: white;
+      }
+
+    </style>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="img/logospensa.png" width="30" height="30" class="d-inline-block align-top" alt="">
+         <span class="text-white">SMP Negeri 1 Singaraja</span>
+      </a>
+    </nav>
+    <div class="center">
+      <div>
+        <h3 class="text-white text-center font-weight-bold">Instruksi</h3>
+        <h4 class="text-white text-center">Pastikan QR pada kartu terlihat di Kamera</h4>
+      </div>
+      <div class="container-fluid">
+        <div id="tombolqr"class="container-qr">
+          
+        </div>
+
+        <div class="container-fluid camera">
+          <div  id="scanan">
+            <canvas id="qr-canvas"></canvas>
+            <div  class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
+            <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
+            <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
+            <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+
+      
+
+        </div>
+
+        </div>
+
+    </div>
+    <center>
+      <!-- <button ng-click = "batalscan()" type="button" class="btn btn-danger">Batal</button> -->
+      <h3 class="text-white" id="outputData" ></h3 class="text-white">
+    </center>
+
+    </div>
+    
+
+  </ion-content>
+</ion-view>
