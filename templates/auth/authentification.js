@@ -51,19 +51,20 @@ angular.module('app.authentification', [])
         //   console.log(outputData);
         scanning = false;
 
-        firebase.database().ref('siswa').orderByChild('nisn').equalTo(res).on('value', function (snapshot) {
+        firebase.database().ref('dataSiswa').orderByChild('nisn').equalTo(res).on('value', function (snapshot) {
           hasil = snapshot.val();
           console.log(hasil);
           if (snapshot.val()) {
             $ionicLoading.show()
             snapshot.forEach(function (data) {
               console.log(data.key);
-              let firebaseRefKey = firebase.database().ref('siswa').child(data.key);
+              let firebaseRefKey = firebase.database().ref('dataSiswa').child(data.key);
               firebaseRefKey.on('value', (dataSnapShot) => {
 
                 console.log(dataSnapShot.val().nama);
                 var emailogin = dataSnapShot.val().email;
                 var passwordlogin = dataSnapShot.val().password;
+                var nisn = dataSnapShot.val().nisn;
                 firebase.auth().signInWithEmailAndPassword(emailogin, passwordlogin).then(function (result) {
                   var userUid = result.user.uid;
                   $ionicLoading.hide()
@@ -78,7 +79,28 @@ angular.module('app.authentification', [])
                   var errorMessage = error.message;
 
                   if (errorCode == 'auth/user-not-found') {
-                    return window.alert('Akun Siswa belum terdaftar');
+                    // return window.alert('Akun Siswa belum terdaftar');
+                    $firebaseAuth().$createUserWithEmailAndPassword(emailogin, passwordlogin)
+                    .then(function (response) {
+                        var user = firebase.auth().currentUser;
+                        firebase.database().ref('dataSiswa').child(nisn).update({
+                            uid: user.uid,
+
+                        });
+                        $ionicLoading.hide();
+                        // window.alert('Upload Berhasil');
+                        // $state.go('dashboard');
+                    })
+
+                    .catch(function (error) {
+                        $ionicLoading.hide();
+                        //console.log(error);
+                        $ionicPopup.alert({
+                            title: 'Information',
+                            template: error.message,
+                            okType: 'button-positive'
+                        });
+                    });
                   }
                   else if (errorCode == 'auth/wrong-password') {
                     return window.alert('Password tidak sesuai');
@@ -92,7 +114,24 @@ angular.module('app.authentification', [])
 
           }
           else {
-            return window.alert('ID di scan Tidak Ada');
+            // window.alert('ID di scan Tidak Ada');
+            Swal.fire({
+              title: 'Absensi Gagal!',
+              text: 'Akun Belum Terdata',
+              icon: 'success',
+              showCancelButton: false,
+              showConfirmButton: false
+            })
+          // $("#modal_tambah").modal();
+          $ionicLoading.hide();
+          var delayInMilliseconds = 2500; //1 second
+          
+          setTimeout(function() {
+              //your code to be executed after 1 second
+              Swal.close();
+              location.reload()
+          }, delayInMilliseconds);
+
           }
 
         });

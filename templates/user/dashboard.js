@@ -8,20 +8,20 @@ angular.module('app.dashboardAbsen', [])
                 var useraktif = firebase.auth().currentUser;
                 console.log(useraktif.uid)
                 var dbRef = firebase.database();
-                var pengguna = dbRef.ref('siswa');
+                var pengguna = dbRef.ref('dataSiswa');
                 pengguna.orderByChild('uid').equalTo(useraktif.uid).on("value", function (snapshot) {
                     console.log(snapshot.val());
                     if (snapshot.val() != null) {
                         snapshot.forEach(function (data) {
                             console.log(data.key);
-                            let firebaseRefKey = firebase.database().ref('siswa').child(data.key);
+                            let firebaseRefKey = firebase.database().ref('dataSiswa').child(data.key);
                             firebaseRefKey.on('value', (dataSnapShot) => {
                                 $scope.formData = {
                                     "uid": dataSnapShot.val().uid,
                                     "nama": dataSnapShot.val().nama,
-                                    "absen": dataSnapShot.val().absen,
+                                    // "absen": dataSnapShot.val().absen,
                                     "nisn": dataSnapShot.val().nisn,
-                                    "kelas": dataSnapShot.val().kelas,
+                                    // "kelas": dataSnapShot.val().kelas,
                                     "foto": dataSnapShot.val().foto
 
                                 };
@@ -64,9 +64,7 @@ angular.module('app.dashboardAbsen', [])
                             waktu: waktu,
                             tanggal: tanggal,
                             uid: $scope.formData.uid,
-                            absen: $scope.formData.absen,
                             nisn: $scope.formData.nisn,
-                            kelas: $scope.formData.kelas,
                         })
                             .then(function () {
                                 Swal.fire({
@@ -82,7 +80,7 @@ angular.module('app.dashboardAbsen', [])
                                 
                                 setTimeout(function() {
                                     //your code to be executed after 1 second
-                                    firebase.database().ref('DHT22/temp').update({
+                                    firebase.database().ref('DHT11/temp').update({
                                         suhu: '0',
                                     }).then(function () {
                                         // $("#modal_tambah").modal('fade')
