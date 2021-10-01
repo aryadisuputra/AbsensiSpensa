@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" content="4">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Absensi Siswa</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <!-- <link href="admin/css/sb-admin-2.min.css" rel="stylesheet"> -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <link href="css/ionic.app.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="custom/depan.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    rel="stylesheet" type="text/css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+  <!-- Custom fonts for this template -->
+  <link href="custom/vendor1/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="custom/admin/pengumuman.css" rel="stylesheet">
+  <!-- <link href="custom/vendor1/css/sb-admin-2.min.css" rel="stylesheet"> -->
+  <!-- Custom styles for this page -->
+  <!-- <link href="custom/vendor1/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
+  <!-- <link href="custom/modal/modal.css" rel="stylesheet"> -->
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pagination.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/routes.js"></script>
+  <!-- <script src="js/jquery-1.11.3.min.js"></script> -->
+  <!-- <script src="js/bootstrap.js"></script> -->
+
+  <script src="templates/auth/authentification.js"></script>
+  <script src="templates/user/dashboard.js"></script>
+
+  <script src="templates/admin/authAdmin.js"></script>
+
+
+
+
+  <!-- <script src="js/chart_js_utils.js"></script> -->
+  <script src="js/directives.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/angularfire.min.js"></script>
+  <script src="js/ng-youtube-embed.min.js"></script>
+  <script src="js/excel.js"></script>
+  <script src="js/FileSaver.min.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script> -->
+  <!-- <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> -->
+  <script src="js/firebase.init.js"></script>
+  <script src="js/ng-cordova.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.1/xlsx.full.min.js"></script>
+  <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+
+  <script src="js/ng-file-upload-shim.min.js"></script>
+  <script src="js/ng-file-upload.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
+  <script src="js/loadBalancing.js"></script>
+  <script src="cordova.js"></script>
+  <style type="text/css" media="print">
+    .no-print {
+      display: none;
+    }
+  </style>
+
+  <style>
+    .dropbtn {
+      /* background-color: #04AA6D; */
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: blue;
+    }
+
+    .toggledaftar {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .toggledaftar input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .status {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .status:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.status {
+      background-color: #2196F3;
+    }
+
+    input:focus+.status {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.status:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .status.round {
+      border-radius: 34px;
+    }
+
+    .status.round:before {
+      border-radius: 50%;
+    }
+
+    /* #map {
+    float: left;
+    width: calc(100% - 400px);
+    height: 100vh;
+} */
+    #map {
+      height: 100%;
+    }
+  </style>
+
+
+
+
+</head>
+<!-- oncontextmenu="return false" -->
+
+<body ng-app="app" animation="slide-left-right-ios7" style="background-color: #D9DDDC;">
+  <div>
+    <div>
+      <ion-nav-view></ion-nav-view>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialise"></script> -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGz-FpnY_PXX_Zy83lwHia79axY19-Xcs&libraries=places"></script>
+  <script>
+
+    // $('#modal_pengumuman').modal('show');
+    if ($(window).width() < 960) {
+      $("#wrapper").addClass("toggled");
+    }
+
+    function checkWidth(init) {
+      /*If browser resized, check width again */
+      if ($(window).width() < 514) {
+        $('#wrapper').addClass('toggled');
+      }
+      else {
+        if (!init) {
+          $('#wrapper').removeClass('toggled');
+        }
+      }
+    }
+
+    $(document).ready(function () {
+      checkWidth(true);
+
+      $(window).resize(function () {
+        checkWidth(false);
+      });
+    });
+    // google.maps.event.addDomListener(window, 'load', initialise);
+  </script>
+
+</body sty>
+
+</html>

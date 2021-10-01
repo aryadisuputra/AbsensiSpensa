@@ -1,0 +1,157 @@
+<ion-view title="Data Absensi" hide-nav-bar="true" cache-view="false" id="loginAdmin">
+    <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+        <ion-view title="Beranda Admin Admin" hide-nav-bar="true" cache-view="false" id="loginAdmin">
+            <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+              <div class="d-flex" id="wrapper">
+                <!-- Sidebar -->
+                <div class="pt-5 bck" id="sidebar-wrapper">
+                  <div class="sidebar gmbr mb-4">
+                    <img src="img/logospensa.png" alt="">
+                  </div>
+                  <div class="container center">
+                    <!-- <a href="" class="text-center" style="color: #e9ebee;">
+                        <p id="nip">{{formData.nip}}</p>
+                      </a> -->
+                    <a href="" class="text-center" style="color: #e9ebee;">
+                      <p id="nama">{{formData.nama}}</p>
+                    </a>
+                  </div>
+                  <div class="list-group list-group-flush siden pt-3">
+                    <ul class="text-light">
+                      <li ><a ng-click="beranda()" class="pl-4"><i
+                            class="fas fa-home"></i>Beranda</a></li>
+                      <!-- <li ><a ng-click="topup()" class="pl-4"><i class="fas fa-coins"></i>Top Up</a></li> -->
+                      <li ><a ng-click="transaksi()" class="pl-4"><i class="fas fa-receipt"></i>Riwayat Transaksi</a></li>
+                      <!-- <li ><a ng-click="member()" class="pl-4"><i class="fas fa-users"></i>Data Member</a></li> -->
+                      <li ><a ng-click="pengaturan()" class="pl-4"><i class="fas fa-cogs"></i>Pengaturan</a></li>
+                      <li><a data-toggle="modal" data-target="#modal_keluar" class="pl-4"><i
+                            class="fas fa-sign-out-alt"></i>Keluar</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="d-flex flex-column w-100 h-100">
+                  <nav class=" navbar navbar-expand navbar-light bck2">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                        <button class="btn btn-outline-light" id="menu-toggle" ng-click="toogle()"><i
+                            class="fas fa-align-justify"></i></button>
+                      </ul>
+                      <div class="my-2 my-lg-0">
+                        <a class="navbar-brand text-white" href=""><i class="far fa-question-circle"
+                            style="font-size:24px"></i></a>
+                      </div>
+                    </div>
+                  </nav>
+                  <div id="page-content-wrapper">
+          
+                    <div id="main-content" class="container-fluid mt-5 px-5">
+                      <!-- Begin Page Content -->
+                      <div class="">
+                        <!-- <h5 class="mb-5 text-dark font-weight-bold"></h5> -->
+                        <h5 class="mb-5 text-dark font-weight-bold"><a style="text-decoration: none;" class="text-dark">Beranda
+                          </a> Admin / <span class="font-weight-normal">{{formData.toko}}</span></h5>
+                        <!-- Content Row -->
+                        <div class="row">
+                          <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-light shadow-sm h-100 py-2 bck" style="border-radius: 10px;">
+                              <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-light text-uppercase mb-3">Data Siswa</div>
+          
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-receipt fa-3x text-light"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-footer bg-transparent">
+                                <a ng-click="transaksi()" class="btn btn-outline-light montserrat px-4 font-weight-bold"
+                                  style="border-radius: 50px;">Lihat</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-light shadow-sm h-100 py-2 bck" style="border-radius: 10px;">
+                              <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-light text-uppercase mb-3">Data Absensi</div>
+          
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-receipt fa-3x text-light"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-footer bg-transparent">
+                                <a ng-click="transaksi()" class="btn btn-outline-light montserrat px-4 font-weight-bold"
+                                  style="border-radius: 50px;">Lihat</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-md-6 mb-4">
+                            <div class="card border-left-light shadow-sm h-100 py-2 bck" style="border-radius: 10px;">
+                              <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                  <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-light text-uppercase mb-3">PENGATURAN</div>
+          
+                                  </div>
+                                  <div class="col-auto">
+                                    <i class="fas fa-cogs fa-3x text-light"></i>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card-footer bg-transparent">
+                                <a ng-click="pengaturan()" class="btn btn-outline-light montserrat px-4 font-weight-bold"
+                                  style="border-radius: 50px;">Lihat</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+                  </div>
+                  <footer class="bottom-footer">
+                    <div class="text-light p-3 bck2">
+                      <div class=" ">
+                        <span class=" font-weight-bold montserrat" style="font-size: small;"> © 2021 Copyright:</span>
+          
+                        <a class=" font-weight-bold text-light montserrat" style="font-size: small;"
+                          href="">Coco Membership</a>
+                      </div>
+                    </div>
+                  </footer>
+                </div>
+          
+              </div>
+              <div class="modal fade" id="modal_keluar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                      <h5 class="modal-title font-weight-bold text-light" id="exampleModalLabel">Keluar Coco Membership</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <center>
+                        <i class="fas fa-exclamation-triangle text-warning my-3" style="font-size:50px;"></i>
+                        <h6 class="font-weight-bold">Apakah Anda yakin ingin keluar aplikasi?</h6>
+                      </center>
+          
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                      <button ng-click="logout()" type="button" class="btn btn-danger">Keluar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-content>
+          </ion-view>
+    </ion-content>
+</ion-view>

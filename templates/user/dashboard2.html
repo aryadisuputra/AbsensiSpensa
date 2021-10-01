@@ -1,0 +1,95 @@
+<ion-view title="Absensi Siswa" hide-nav-bar="true" cache-view="false" id="welcome">
+    <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+        <!-- Just an image -->
+        <style>
+            body {
+                background-image: url(img/unnamed.jpg);
+                background-size: cover;
+            }
+        </style>
+        <!-- Image and text -->
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="img/logospensa.png" width="40" height="40" style="margin-right: 15px;"
+                    class="d-inline-block align-top" alt="">
+                SMP Negeri 1 Singaraja
+            </a>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="container fotoSiswa">
+                <img class="fotoSw" src="{{formData.foto}}" alt="">
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container descript">
+                <div class="row" class="bioData" style="margin-left: 30px; margin-top: 20px;">
+                    <div class="row">
+                        <div class="col-sm-4 namA" style="color: white;">Nama</div>
+                        <div class="col-sm-7 namA1" style="color: white;">{{formData.nama}}</div>
+                        <div class="col-sm-4 kelaS" style="color: white;">No Absen</div>
+                        <div class="col-sm-7 kelaS1" style="color: white;">{{formData.absen}}</div>
+                        <div class="col-sm-4 kelaS" style="color: white;">Kelas</div>
+                        <div class="col-sm-7 kelaS1" style="color: white;">{{formData.kelas}}</div>
+                        <div class="col-sm-4 nisN" style="color: white;">NISN</div>
+                        <div class="col-sm-7 nisN1" style="color: white;">{{formData.nisn}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container suhu">
+                <div class="form-group">
+                    <h1>Suhu : </h1>
+                    <h1>{{suhu}}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" hidden>
+            <div class="container suhu">
+                <div class="form-group">
+                    <input id="suhu" type="text" class="form-control" placeholder="Suhu">
+                </div>
+            </div>
+        </div>
+        <!--modal tambah -->
+        <div class="modal fade" id="modal_tambah" tabindex="0" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title font-weight-bold text-light" id="exampleModalLabel">Absen Siswa
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <i class="fas fa-check text-success my-3" style="font-size:50px;" ></i>
+                            <h4 class="font-weight-bold">Absensi Kehadiran Sukses</h4>
+                            <h4 class="font-weight-bold">Suhu Tubuh Anda : {{suhu}}</h4>
+                          </center>
+                    </div>
+                    <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-success" ng-click="simpan()">Simpan</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="container-fluid">
+            <div class="container hadir">
+                <div class="row">
+                    <div class="col text-center">
+                        <button ng-click="hadir()" type="button" class="btn btn-primary btn-lg"
+                            style="width: 150px; color: white;">Hadir</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </ion-content>
+</ion-view>
