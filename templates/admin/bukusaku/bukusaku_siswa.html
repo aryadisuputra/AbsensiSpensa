@@ -1,0 +1,83 @@
+<ion-view title="Absensi Siswa" hide-nav-bar="true" cache-view="false" id="welcome">
+    <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+        <!-- Just an image -->
+        <style>
+            /* body {
+                background-image: url(img/unnamed.jpg);
+                background-size: cover;
+            } */
+        </style>
+        <!-- Image and text -->
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="img/logospensa.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                <span class="text-white">SMP Negeri 1 Singaraja</span>
+            </a>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="container fotoSiswa">
+                <img class="fotoSw" src="{{formData.foto}}" alt="">
+            </div>
+        </div>
+
+        <div class="container-fluid mt-5">
+            <div class="container card">
+                <div class="card-body row" style="margin-left: 30px; margin-top: 20px;">
+                    <div class="row">
+                        <div class="col-sm-4 namA">Nama</div>
+                        <div class="col-sm-7 namA1">{{formData.nama}}</div>
+                        <div class="col-sm-4 nisN">NISN</div>
+                        <div class="col-sm-7 nisN1">{{formData.nisn}}</div>
+                        <div class="col-sm-4 kelaS">No Absen</div>
+                        <div class="col-sm-7 kelaS1">{{formData.absen}}</div>
+                        <div class="col-sm-4 kelaS">Kelas</div>
+                        <div class="col-sm-7 kelaS1">{{formData.kelas}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="container card">
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+                            <center>
+                                <div class="form-group">
+                                    <h3>Tambah catatan siswa</h3>
+                                    <input id="nilai" type="text" class="form-control" placeholder="Nilai">
+                                    <br>
+                                    <textarea name="" id="komentar" class="form-control" cols="30" rows="10"
+                                        placeholder="Komentar/Tanggapan"></textarea><br>
+                                    <input id="namaGuru" type="text" class="form-control"
+                                        placeholder="Nama Pengisi Catatan">
+                                        <br>
+                                    <select class="form-control" id="profesi">
+                                        <option value="Guru">Guru
+                                        </option>
+                                        <option value="Kesiswaan">Kesiswaan
+                                        </option>
+                                    </select>
+                                    <br>
+                                    <button ng-click="simpan()" type="button" class="btn btn-primary btn-lg"
+                                        style="width: 150px; color: white;">Simpan</button>
+                                </div>
+                            </center>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="container hadir">
+                <div class="row">
+                    <div class="col text-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

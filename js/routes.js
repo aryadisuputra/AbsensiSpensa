@@ -13,6 +13,12 @@ angular.module('app.routes', [])
         controller: 'welcomeCtrl'
       })
 
+      .state('absensiSiswa', {
+        url: '/absensiSiswa',
+        templateUrl: 'templates/absensi_umum/absensi_umum.html',
+        controller: 'absensiUmumCtrl'
+      })
+
       .state('dashboardAbsen1', {
         url: '/dashboardAbsen1',
         templateUrl: 'templates/user/dashboard1.html',
@@ -27,6 +33,12 @@ angular.module('app.routes', [])
         url: '/dashboardAbsen3',
         templateUrl: 'templates/user/dashboard3.html',
         controller: 'dashboardAbsen3Ctrl'
+      })
+
+      .state('dashboardAbsenBelakang', {
+        url: '/dashboardAbsenBelakang',
+        templateUrl: 'templates/user/dashboardbelakang.html',
+        controller: 'dashboardAbsenBelakangCtrl'
       })
 
       .state('alat1', {
@@ -47,6 +59,12 @@ angular.module('app.routes', [])
         controller: 'alat3Ctrl'
       })
 
+      .state('alatbelakang', {
+        url: '/alatbelakang',
+        templateUrl: 'templates/auth/welcome/alatbelakang.html',
+        controller: 'alatbelakangCtrl'
+      })
+
       // LOGIN ADMIN
       .state('loginAdmin', {
         url: '/loginAdmin',
@@ -61,7 +79,33 @@ angular.module('app.routes', [])
       })
 
 
+      .state('data_absensiAdmin', {
+        url: '/data_absensiAdmin',
+        templateUrl: 'templates/admin/data_absensi/data_absensi.html',
+        controller: 'data_absensiAdminCtrl'
+      })
 
+      .state('data_siswaAdmin', {
+        url: '/data_siswaAdmin',
+        templateUrl: 'templates/admin/data_siswa/data_siswa.html',
+        controller: 'data_siswaAdminCtrl'
+      })
+
+      .state('bukusaku', {
+        url: '/bukusaku',
+        templateUrl: 'templates/admin/bukusaku/bukusaku.html',
+        controller: 'bukusakuCtrl'
+      })
+
+      .state('bukusaku_siswa', {
+        params: {
+          id: '',
+        },
+        url: '/bukusaku_siswa',
+        templateUrl: 'templates/admin/bukusaku/bukusaku_siswa.html',
+        controller: 'bukusaku_siswaCtrl'
+      })
+      
     $urlRouterProvider.otherwise('/welcome')
 
 

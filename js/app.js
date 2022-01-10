@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives', 'app.excel', 'app.services', 'firebase', 'firebaseConfig', 'ngCordova', 'ngFileUpload', 'app.authentification' , 'app.dashboardAbsen','app.authAdmin'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives', 'app.excel', 'app.services', 'firebase', 'firebaseConfig', 'ngCordova', 'ngFileUpload', 'app.authentification' , 'app.dashboardAdmin','data_absensiAdmin','data_siswaAdmin','app.authAdmin' ,'app.dashboardAbsen' ,'absensiUmum' ,'app.bukusaku'])
 
   .config(function ($ionicConfigProvider, $sceDelegateProvider) {
     $ionicConfigProvider.backButton.text('').previousTitleText(false);

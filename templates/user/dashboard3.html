@@ -2,19 +2,18 @@
     <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
         <!-- Just an image -->
         <style>
-            body {
+            /* body {
                 background-image: url(img/unnamed.jpg);
                 background-size: cover;
-            }
+            } */
         </style>
         <!-- Image and text -->
         <nav class="navbar navbar-light">
             <a class="navbar-brand" href="#">
-                <img src="img/logospensa.png" width="40" height="40" style="margin-right: 15px;"
-                    class="d-inline-block align-top" alt="">
-                SMP Negeri 1 Singaraja
+              <img src="img/logospensa.png" width="30" height="30" class="d-inline-block align-top" alt="">
+               <span class="text-white">SMP Negeri 1 Singaraja</span>
             </a>
-        </nav>
+          </nav>
 
         <div class="container-fluid">
             <div class="container fotoSiswa">
@@ -22,29 +21,42 @@
             </div>
         </div>
 
-        <div class="container-fluid">
-            <div class="container descript">
-                <div class="row" class="bioData" style="margin-left: 30px; margin-top: 20px;">
+        <div class="container-fluid mt-5">
+            <div class="container card">
+                <div class="card-body row" style="margin-left: 30px; margin-top: 20px;">
                     <div class="row">
-                        <div class="col-sm-4 namA" style="color: white;">Nama</div>
-                        <div class="col-sm-7 namA1" style="color: white;">{{formData.nama}}</div>
-                        <div class="col-sm-4 kelaS" style="color: white;">No Absen</div>
-                        <div class="col-sm-7 kelaS1" style="color: white;">{{formData.absen}}</div>
-                        <div class="col-sm-4 kelaS" style="color: white;">Kelas</div>
-                        <div class="col-sm-7 kelaS1" style="color: white;">{{formData.kelas}}</div>
-                        <div class="col-sm-4 nisN" style="color: white;">NISN</div>
-                        <div class="col-sm-7 nisN1" style="color: white;">{{formData.nisn}}</div>
+                        <div class="col-sm-4 namA">Nama</div>
+                        <div class="col-sm-7 namA1">{{formData.nama}}</div>
+                        <div class="col-sm-4 nisN">NISN</div>
+                        <div class="col-sm-7 nisN1">{{formData.nisn}}</div>
+                        <div class="col-sm-4 kelaS">No Absen</div>
+                        <div class="col-sm-7 kelaS1">{{formData.absen}}</div>
+                        <div class="col-sm-4 kelaS">Kelas</div>
+                        <div class="col-sm-7 kelaS1">{{formData.kelas}}</div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="container card">
+                <div class="">
+                    <div class="card">
+                        <div class="card-body">
+                            <center>
+                                <div class="form-group">
+                                    <h1>{{suhu}} <span>&#8451;</span> </h1>
+                                </div>
+                            </center>
+
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>
 
         <div class="container-fluid">
-            <div class="container suhu">
-                <div class="form-group">
-                    <h1>Suhu : </h1>
-                    <h1>{{suhu}}</h1>
-                </div>
+            <div class="container">
+               
             </div>
         </div>
 

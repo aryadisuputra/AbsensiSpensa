@@ -13,23 +13,16 @@
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
   <!-- Custom styles for this template-->
-  <!-- <link href="admin/css/sb-admin-2.min.css" rel="stylesheet"> -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
   <link href="css/ionic.app.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="custom/depan.css">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
-    rel="stylesheet" type="text/css"> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <!-- <script src="https://cdnjs.com/libraries/Chart.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
-  <script type="text/javascript" charset="utf8"
-    src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -39,32 +32,31 @@
   <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
+    
   <!-- Custom styles for this template -->
   <link href="custom/admin/pengumuman.css" rel="stylesheet">
-  <!-- <link href="custom/vendor1/css/sb-admin-2.min.css" rel="stylesheet"> -->
-  <!-- Custom styles for this page -->
-  <!-- <link href="custom/vendor1/datatables/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
-  <!-- <link href="custom/modal/modal.css" rel="stylesheet"> -->
-
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
   <script src="js/app.js"></script>
   <script src="js/pagination.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/routes.js"></script>
-  <!-- <script src="js/jquery-1.11.3.min.js"></script> -->
-  <!-- <script src="js/bootstrap.js"></script> -->
 
+  <!-- ABSENSI -->
   <script src="templates/auth/authentification.js"></script>
   <script src="templates/user/dashboard.js"></script>
 
+
+  <!-- ADMIN -->
   <script src="templates/admin/authAdmin.js"></script>
+  <script src="templates/admin/dashboard/dashboard.js"></script>
+  <script src="templates/absensi_umum/absensi_umum.js"></script>
+  <script src="templates/admin/data_absensi/data_absensi.js"></script>
+  <script src="templates/admin/data_siswa/data_siswa.js"></script>
+  <script src="templates/admin/bukusaku/bukusaku.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
-
-  <!-- <script src="js/chart_js_utils.js"></script> -->
+  <!-- OTHER JS -->
   <script src="js/directives.js"></script>
   <script src="js/services.js"></script>
   <script src="js/firebase.js"></script>
@@ -72,24 +64,15 @@
   <script src="js/ng-youtube-embed.min.js"></script>
   <script src="js/excel.js"></script>
   <script src="js/FileSaver.min.js"></script>
-  <!-- <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script> -->
-  <!-- <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script> -->
   <script src="js/firebase.init.js"></script>
   <script src="js/ng-cordova.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.1/xlsx.full.min.js"></script>
   <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
-
   <script src="js/ng-file-upload-shim.min.js"></script>
   <script src="js/ng-file-upload.min.js"></script>
   <script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
   <script src="js/loadBalancing.js"></script>
   <script src="cordova.js"></script>
-  <!-- <style type="text/css" media="print">
-    .no-print {
-      display: none;
-    }
-  </style> -->
-
   <style>
           .center {
         margin: 0;
@@ -216,13 +199,7 @@
       height: 100%;
     }
   </style>
-
-
-
-
 </head>
-<!-- oncontextmenu="return false" -->
-
 <body ng-app="app" animation="slide-left-right-ios7" style="background-color: #D9DDDC;">
   <div>
     <div>
@@ -248,38 +225,8 @@
   <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-storage.js"></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initialise"></script> -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGz-FpnY_PXX_Zy83lwHia79axY19-Xcs&libraries=places"></script>
-  <script>
-
-    // $('#modal_pengumuman').modal('show');
-    if ($(window).width() < 960) {
-      $("#wrapper").addClass("toggled");
-    }
-
-    function checkWidth(init) {
-      /*If browser resized, check width again */
-      if ($(window).width() < 514) {
-        $('#wrapper').addClass('toggled');
-      }
-      else {
-        if (!init) {
-          $('#wrapper').removeClass('toggled');
-        }
-      }
-    }
-
-    $(document).ready(function () {
-      checkWidth(true);
-
-      $(window).resize(function () {
-        checkWidth(false);
-      });
-    });
-    // google.maps.event.addDomListener(window, 'load', initialise);
-  </script>
-
 </body sty>
 
 </html>

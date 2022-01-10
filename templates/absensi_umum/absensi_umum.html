@@ -2,40 +2,19 @@
     <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
-            <div class="pt-5 bck" id="sidebar-wrapper">
-                <div class="sidebar gmbr mb-4">
-                    <img src="img/logospensa.png" alt="">
-                </div>
-                <div class="container center">
-                    <!-- <a href="" class="text-center" style="color: #e9ebee;">
-                      <p id="nip">{{formData.nip}}</p>
-                    </a> -->
-                    <a href="" class="text-center" style="color: #e9ebee;">
-                        <p id="nama">{{formData.nama}}</p>
-                    </a>
-                </div>
-                <div class="list-group list-group-flush siden pt-3">
-                    <ul class="text-light">
-                        <li><a ng-click="beranda()" class="pl-4"><i class="fas fa-home"></i>Beranda</a></li>
-                        <!-- <li ><a ng-click="topup()" class="pl-4"><i class="fas fa-coins"></i>Top Up</a></li> -->
-                        <li><a ng-click="dataSiswa()" class="pl-4"><i class="fas fa-users"></i>Data Siswa</a></li>
-                        <!-- <li ><a ng-click="member()" class="pl-4"><i class="fas fa-users"></i>Data Member</a></li> -->
-                        <li><a ng-click="dataAbsensi()()" class="pl-4"><i class="fas fa-receipt"></i>Absensi Siswa</a>
-                        </li>
-                        <li><a data-toggle="modal" data-target="#modal_keluar" class="pl-4"><i
-                                    class="fas fa-sign-out-alt"></i>Keluar</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="d-flex flex-column w-100">
                 <nav class=" navbar navbar-expand navbar-light bck2">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                        <button class="btn btn-outline-light" id="menu-toggle" ng-click="toogle()"><i
-                            class="fas fa-align-justify"></i></button>
-                      </ul>
+                        <ul class="navbar-nav mr-auto">
+                            <button class="btn btn-outline-light" id="menu-toggle" ng-click="toogle()"><i
+                                    class="fas fa-align-justify"></i></button>
+                        </ul>
+                        <div class="my-2 my-lg-0">
+                            <a class="navbar-brand text-white" href=""><i class="far fa-question-circle"
+                                    style="font-size:24px"></i></a>
+                        </div>
                     </div>
-                  </nav>
+                </nav>
                 <div id="page-content-wrapper">
 
                     <div id="main-content" class="container-fluid mt-5 px-5">
@@ -78,14 +57,8 @@
                                 <div class="">
                                     <div class="card shadow-sm mb-4 animated--grow-in">
                                         <div class="card-header py-3 bck2">
-                                            <select class="form-control float-left mr-2" ng-model="form.pilihBulan" ng-change="getBulan()"
-                                                style="width: 200px;">
-                                                <option value="">Pilih Bulan </option>
-                                                <option class="form-control" ng-repeat="data in bulan | orderBy:'namaOutlet'" value="{{data.$id}}">
-                                                    {{data.$id}}</option>
-                                            </select>
-                                            <div ng-if="tampilPilihTanggal == true">
-                                                <select class="form-control float-left mr-2" ng-model="form.pilihTanggal"
+
+                                            <select class="form-control float-left mr-2" ng-model="form.pilihTanggal"
                                                 ng-change="getTanggal()" style="width: 200px;">
                                                 <option value="">Pilih Tanggal </option>
                                                 <!-- <option value="09">September</option> -->
@@ -135,14 +108,18 @@
                                                   value="{{data.$id}}">
                                                   {{data.$id}}</option> -->
                                             </select>
-                                            </div>
-                                            <a ng-click="cetak()" class=" btn btn-sm btn-primary shadow-sm"
+                                            <!-- <a ng-click="cetak()" class=" btn btn-sm btn-primary shadow-sm"
                                                 style="border-radius:50px;"><i class="fa fa-print fa-sm "></i> Export
-                                                XLS</a>
+                                                XLS</a> -->
                                             <!-- <a  class=" btn btn-sm bg-success shadow-sm text-white"
                                                 style="border-radius:50px;" data-toggle="modal" data-target="#modal_tambah"><i class="fa fa-plus fa-sm" ></i> Tambah</a> -->
                                             <!-- <a href="" class=" btn btn-sm btn-primary shadow-sm" style="border-radius:50px;"><i
                                                     class="fa fa-print fa-sm "></i> Export XLS</a> -->
+
+<!-- 
+                                            <a ng-click='data_admin()'
+                                                class="btn btn-sm bg-warning shadow-sm text-white float-right px-3"
+                                                style="border-radius:50px;">Kembali</a> -->
 
                                             <input class="search  float-right mr-5 bg-light" type="text"
                                                 placeholder="Cari" style="border-radius:50px; color: black;"
@@ -159,6 +136,9 @@
                                                             <th width="">No</th>
                                                             <th width="">Nama</th>
                                                             <th width="">Nisn</th>
+                                                            <!-- <th width="">Absen</th>
+                                                            <th width="">Kelas</th>
+                                                            <th width="">Keterangan</th> -->
                                                             <th width="">Suhu Tubuh</th>
                                                             <th width="">Waktu</th>
                                                             <th width="">Aksi</th>
@@ -172,21 +152,40 @@
                                                             <td width="">{{$index+1}}</td>
                                                             <td width="">{{data.nama}}</td>
                                                             <td width="">{{data.nisn}}</td>
+                                                            <!-- <td width="">{{data.absen}}</td>
+                                                            <td width="">{{data.kelas}}</td>
+                                                            <td width="">{{data.keterangan}}</td> -->
                                                             <td width="">{{data.suhu}}</td>
                                                             <td width="">{{data.waktu}}</td>
+                                                            <!-- <td ng-if="data.status===true" width="">
+                                                                <div class="container bg-success py-1">
+                                                                    <p class="text-center text-light my-1">Diijinkan</p>
+                                                                </div>
+                                                            </td>
+                                                            <td ng-if="data.status===false" width="">
+                                                                <div class="container bg-danger py-1">
+                                                                    <p class="text-center text-light my-1">Tidak
+                                                                        Diijinkan</p>
+                                                                </div> -->
                                                             </td>
                                                             <td width="">
+                                                                <!-- <a data-id="{{data.$id}}" data-toggle="modal"
+                                                                    data-target="#modal_verifikasi" title="Verifikasi"
+                                                                    class="verifikasiDataAdminSiswa btn bg-success"><span
+                                                                        class="fas fa-check"
+                                                                        style="color:white;"></span></a> -->
+
                                                                 <a data-id="{{data.$id}}" data-toggle="modal"
                                                                     data-target="#modal_edit" title="Lihat"
                                                                     class="updateDataAbsensi btn bg-warning"><span
                                                                         class="fas fa-eye"
                                                                         style="color:white;"></span></a>
 
-                                                                <a data-id="{{data.$id}}" data-toggle="modal"
+                                                                <!-- <a data-id="{{data.$id}}" data-toggle="modal"
                                                                     data-target="#modal_hapus" title="Reject"
                                                                     class="removeDataSiswa btn bg-danger "><span
                                                                         class="fas fa-fw fa-trash"
-                                                                        style="color:white;"></span></a>
+                                                                        style="color:white;"></span></a> -->
 
                                                             </td>
                                                         </tr>
@@ -225,6 +224,58 @@
 
                                                     </tbody>
                                                 </table>
+                                                <!--modal Verifikasi -->
+                                                <!-- <div class="modal fade" id="modal_verifikasi" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-success">
+                                                                <h5 class="modal-title font-weight-bold text-light"
+                                                                    id="exampleModalLabel">Verifikasi Siswa
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputEmail3"
+                                                                            class="col-xl-2 col-form-label">Nama</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input id="namaAdmin" type="text"
+                                                                                class="form-control" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Email</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input id="emailAdmin" type="text"
+                                                                                class="form-control" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Outlet</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input id="outletAdmin" type="text"
+                                                                                class="form-control" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger"
+                                                                    ng-click="batalverifikasi()">Batal Verifikasi</button>
+                                                                <button type="button" class="btn btn-success"
+                                                                    ng-click="verifikasi()">Verifikasi</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
                                                 <!--modal edit -->
                                                 <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog"
                                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -322,7 +373,7 @@
                                                                     <i class="fas fa-exclamation-triangle text-warning my-3"
                                                                         style="font-size:50px;"></i>
                                                                     <h6>Apakah Anda yakin ingin menghapus data <span
-                                                                            class="font-weight-bold">Absensi</span>?,
+                                                                            class="font-weight-bold">Admin </span>?,
                                                                         data yang
                                                                         sudah di
                                                                         hapus tidak dapat dikembalikan lagi</h6>

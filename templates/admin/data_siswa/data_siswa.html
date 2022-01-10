@@ -1,0 +1,559 @@
+<ion-view title="Data Siswa" hide-nav-bar="true" cache-view="false" id="loginSiswa">
+    <ion-content padding="false" class="manual-ios-statusbar-padding" scroll="false">
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar -->
+            <div class="pt-5 bck" id="sidebar-wrapper">
+                <div class="sidebar gmbr mb-4">
+                    <img src="img/logospensa.png" alt="">
+                </div>
+                <div class="container center">
+                    <!-- <a href="" class="text-center" style="color: #e9ebee;">
+                      <p id="nip">{{formData.nip}}</p>
+                    </a> -->
+                    <a href="" class="text-center" style="color: #e9ebee;">
+                        <p id="nama">{{formData.nama}}</p>
+                    </a>
+                </div>
+                <div class="list-group list-group-flush siden pt-3">
+                    <ul class="text-light">
+                        <li><a ng-click="beranda()" class="pl-4"><i class="fas fa-home"></i>Beranda</a></li>
+                        <!-- <li ><a ng-click="topup()" class="pl-4"><i class="fas fa-coins"></i>Top Up</a></li> -->
+                        <li><a ng-click="dataSiswa()" class="pl-4"><i class="fas fa-users"></i>Data Siswa</a></li>
+                        <!-- <li ><a ng-click="member()" class="pl-4"><i class="fas fa-users"></i>Data Member</a></li> -->
+                        <li><a ng-click="dataAbsensi()()" class="pl-4"><i class="fas fa-receipt"></i>Absensi Siswa</a>
+                        </li>
+                        <li><a data-toggle="modal" data-target="#modal_keluar" class="pl-4"><i
+                                    class="fas fa-sign-out-alt"></i>Keluar</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex flex-column w-100">
+                <nav class=" navbar navbar-expand navbar-light bck2">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <button class="btn btn-outline-light" id="menu-toggle" ng-click="toogle()"><i
+                                    class="fas fa-align-justify"></i></button>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="page-content-wrapper">
+
+                    <div id="main-content" class="container-fluid mt-5 px-5">
+                        <!-- Begin Page Content -->
+                        <div class="">
+                            <!-- Begin Page Content -->
+                            <div class="">
+                                <!-- Page Heading -->
+                                <h5 class="mb-5 text-dark font-weight-bold">Data Siswa / <span
+                                        class="font-weight-normal">SMP NEGERI 1 SINGARAJA</span></h5>
+                                <div class="alert alert-success alert-dismissible" role="alert"
+                                    id="alert-dataSiswa-success">
+                                    <strong>Data Siswa </strong> Berhasil di tambahkan.
+                                    <button type="button" class="close alert-close">&times;</button>
+                                </div>
+                                <div class="alert alert-success alert-dismissible" role="alert"
+                                    id="alert-updateSiswa-success">
+                                    <strong>Data Siswa </strong> Berhasil di update.
+                                    <button type="button" class="close alert-close">&times;</button>
+                                </div>
+                                <div class="alert alert-danger alert-dismissible" role="alert"
+                                    id="alert-deleteSiswa-danger">
+                                    <strong>Data Siswa </strong> Berhasil di hapus.
+                                    <button type="button" class="close alert-close">&times;</button>
+                                </div>
+                                <div class="alert alert-warning alert-dismissible" role="alert"
+                                    id="alert-dataSiswa-warning">
+                                    <strong>Data Siswa </strong> Belum Lengkap.
+                                    <button type="button" class="close alert-close">&times;</button>
+                                </div>
+                                <!-- !-- DataTales Example -->
+                                <div class="">
+                                    <div class="card shadow-sm mb-4 animated--grow-in">
+                                        <div class="card-header py-3 bck2">
+                                            <!-- 
+                                            <select class="form-control float-left mr-2" ng-model="form.pilihTanggal" ng-change="getTanggal()" style="width: 200px;" >
+                                                <option value="">Pilih Tanggal </option>
+                                                <option class="form-control" ng-repeat="data in tanggal | orderBy:'namaOutlet'"
+                                                  value="{{data.$id}}">
+                                                  {{data.$id}}</option>
+                                              </select> -->
+                                            <a class=" btn btn-sm bg-success shadow-sm text-white"
+                                                style="border-radius:50px;" data-toggle="modal"
+                                                data-target="#modal_tambah"><i class="fa fa-plus fa-sm"></i> Tambah
+                                                Siswa</a>
+
+                                            <input class="search  float-right mr-5 bg-light" type="text"
+                                                placeholder="Cari" style="border-radius:50px; color: black;"
+                                                ng-model="searchData">
+                                        </div>
+
+                                        <div class="card-body">
+
+                                            <div class="table-responsive">
+                                                <table class="table" id="" width="100%" cellspacing="0"
+                                                    style="background-color: white;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th width="">No</th>
+                                                            <th width="">Nama</th>
+                                                            <th width="">Nisn</th>
+                                                            <!-- <th width="">Absen</th>
+                                                            <th width="">Kelas</th>
+                                                            <th width="">Keterangan</th> -->
+                                                            <!-- <th width="">Suhu Tubuh</th>
+                                                            <th width="">Waktu</th> -->
+                                                            <th width="">Aksi</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr
+                                                            ng-repeat="data in siswa| orderBy: 'nisn' | filter:searchData">
+                                                            <td width="">{{$index+1}}</td>
+                                                            <td width="">{{data.nama}}</td>
+                                                            <td width="">{{data.nisn}}</td>
+                                                            <!-- <td width="">{{data.absen}}</td>
+                                                            <td width="">{{data.kelas}}</td>
+                                                            <td width="">{{data.keterangan}}</td> -->
+                                                            <!-- <td width="">{{data.nisn}}</td>
+                                                            <td width="">{{data.waktu}}</td> -->
+                                                            <!-- <td ng-if="data.status===true" width="">
+                                                                <div class="container bg-success py-1">
+                                                                    <p class="text-center text-light my-1">Diijinkan</p>
+                                                                </div>
+                                                            </td>
+                                                            <td ng-if="data.status===false" width="">
+                                                                <div class="container bg-danger py-1">
+                                                                    <p class="text-center text-light my-1">Tidak
+                                                                        Diijinkan</p>
+                                                                </div> -->
+                                                            </td>
+                                                            <td width="">
+                                                                <!-- <a data-id="{{data.$id}}" data-toggle="modal"
+                                                                    data-target="#modal_verifikasi" title="Verifikasi"
+                                                                    class="verifikasiDataSiswaSiswa btn bg-success"><span
+                                                                        class="fas fa-check"
+                                                                        style="color:white;"></span></a> -->
+
+                                                                <a data-id="{{data.$id}}" data-toggle="modal"
+                                                                    data-target="#modal_edit" title="Lihat"
+                                                                    class="updateDataSiswa btn bg-warning"><span
+                                                                        class="fas fa-eye"
+                                                                        style="color:white;"></span></a>
+
+                                                                <a data-id="{{data.$id}}" data-toggle="modal"
+                                                                    data-target="#modal_hapus" title="Reject"
+                                                                    class="removeDataSiswa btn bg-danger "><span
+                                                                        class="fas fa-fw fa-trash"
+                                                                        style="color:white;"></span></a>
+
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                                <!--modal tambah -->
+                                                <div class="modal fade" id="modal_tambah" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-success">
+                                                                <h5 class="modal-title font-weight-bold text-light"
+                                                                    id="exampleModalLabel">Tambah
+                                                                    Data Siswa
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <!-- <div class="container fotoSiswa">
+                                                                        <img id="fotoSiswa" class="fotoSw" src=""
+                                                                            alt="">
+                                                                    </div>
+                                                                    <br> -->
+                                                                    <div class="form-group row">
+                                                                        <label for="inputEmail3"
+                                                                            class="col-xl-2 col-form-label">Nama</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="namaAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Jenis
+                                                                            Kelamin</label>
+                                                                        <div class="col-xl-10">
+                                                                            <!-- <input type="text" class="form-control"
+                                                                                id="jenisKelaminAbsenAdd" value=""> -->
+                                                                            <select class="form-control"
+                                                                                id="jenisKelaminAbsenAdd">
+                                                                                <option value="Laki-laki">Laki-laki
+                                                                                </option>
+                                                                                <option value="Perempuan">Perempuan
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Tempat
+                                                                            Lahir</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="tempat_lahirAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Tanggal
+                                                                            Lahir</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="date" class="form-control"
+                                                                                id="tanggal_lahirAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Agama</label>
+                                                                        <div class="col-xl-10">
+                                                                            <!-- <input type="text" class="form-control"
+                                                                                id="agamaAbsenAdd" value=""> -->
+                                                                            <select class="form-control"
+                                                                                id="agamaAbsenAdd">
+                                                                                <option value="Hindu">Hindu
+                                                                                </option>
+                                                                                <option value="Islam">Islam
+                                                                                </option>
+                                                                                <option value="Kristen">Kristen
+                                                                                </option>
+                                                                                <option value="Katolik">Katolik
+                                                                                </option>
+                                                                                <option value="Budha">Budha
+                                                                                </option>
+                                                                                <option value="Konghucu">Konghucu
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">NISN</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="nisnAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">NIS</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="nisAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">No
+                                                                            Absen</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="noAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Kelas</label>
+                                                                        <div class="col-xl-10">
+                                                                            <select class="form-control"
+                                                                                id="kelasAbsenAdd" value="">
+                                                                                <option value="">Pilih Kelas </option>
+                                                                                <option value="VIIA1">VIIA1</option>
+                                                                                <option value="VIIA2">VIIA2</option>
+                                                                                <option value="VIIA3">VIIA3</option>
+                                                                                <option value="VIIA4">VIIA4</option>
+                                                                                <option value="VIIA5">VIIA5</option>
+                                                                                <option value="VIIA6">VIIA6</option>
+                                                                                <option value="VIIA7">VIIA7</option>
+                                                                                <option value="VIIA8">VIIA8</option>
+                                                                                <option value="VIIA9">VIIA9</option>
+                                                                                <option value="VIIA10">VIIA10</option>
+                                                                                <option value="VIIA11">VIIA11</option>
+                                                                                <option value="VIIIA1">VIIIA1</option>
+                                                                                <option value="VIIIA2">VIIIA2</option>
+                                                                                <option value="VIIIA3">VIIIA3</option>
+                                                                                <option value="VIIIA4">VIIIA4</option>
+                                                                                <option value="VIIIA5">VIIIA5</option>
+                                                                                <option value="VIIIA6">VIIIA6</option>
+                                                                                <option value="VIIIA7">VIIIA7</option>
+                                                                                <option value="VIIIA8">VIIIA8</option>
+                                                                                <option value="VIIIA9">VIIIA9</option>
+                                                                                <option value="VIIIA10">VIIIA10</option>
+                                                                                <option value="IXA1">IXA1</option>
+                                                                                <option value="IXA2">IXA2</option>
+                                                                                <option value="IXA3">IXA3</option>
+                                                                                <option value="IXA4">IXA4</option>
+                                                                                <option value="IXA5">IXA5</option>
+                                                                                <option value="IXA6">IXA6</option>
+                                                                                <option value="IXA7">IXA7</option>
+                                                                                <option value="IXA8">IXA8</option>
+                                                                                <option value="IXA9">IXA9</option>
+                                                                                <option value="IXA10">IXA10</option>
+                                                                                <option value="IXA11">IXA11</option>
+
+                                                                                <!-- <option class="form-control" ng-repeat="data in tanggal | orderBy:'namaOutlet'"
+                                                                                      value="{{data.$id}}">
+                                                                                      {{data.$id}}</option> -->
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Alamat</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="alamatAbsenAdd" value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-dismiss="modal">Batal</button>
+                                                                <button type="button" ng-click="tambah()"
+                                                                    class="btn btn-success">Simpan</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--modal edit -->
+                                                <div class="modal fade" id="modal_edit" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-lg" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-warning">
+                                                                <h5 class="modal-title font-weight-bold text-light"
+                                                                    id="exampleModalLabel">Lihat
+                                                                    Data
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <div class="container fotoSiswa">
+                                                                        <img id="fotoSiswa" class="fotoSw" src=""
+                                                                            alt="">
+                                                                    </div>
+                                                                    <br>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputEmail3"
+                                                                            class="col-xl-2 col-form-label">Foto</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="file" id="fotoAbsen"
+                                                                                class="form-control">
+                                                                            <button type="button" ng-click="simpan()"
+                                                                                class="btn btn-primary">Simpan</button>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputEmail3"
+                                                                            class="col-xl-2 col-form-label">Nama</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="namaAbsen" value="">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Jenis
+                                                                            Kelamin</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="jenisKelaminAbsen" value=""
+                                                                                readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Tempat
+                                                                            Lahir</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="tempat_lahirAbsen" value=""
+                                                                                readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Tanggal
+                                                                            Lahir</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="tanggal_lahirAbsen" value=""
+                                                                                readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Agama</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="agamaAbsen" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">NISN</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="nisnAbsen" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">NIS</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="nisAbsen" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">No
+                                                                            Absen</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="noabsenAbsen" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Kelas</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="kelasAbsen" value="" readonly>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group row">
+                                                                        <label for="inputPassword3"
+                                                                            class="col-xl-2 col-form-label">Alamat</label>
+                                                                        <div class="col-xl-10">
+                                                                            <input type="text" class="form-control"
+                                                                                id="alamatAbsen" value="">
+                                                                        </div>
+                                                                    </div>
+
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Tutup</button>
+                                                                <button type="button" ng-click="simpanEditData()"
+                                                                    class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--modal hapus  -->
+                                                <div class="modal fade" id="modal_hapus" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header bg-danger">
+                                                                <h5 class="modal-title font-weight-bold text-light"
+                                                                    id="exampleModalLabel">Hapus
+                                                                    Data
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <center>
+                                                                    <i class="fas fa-exclamation-triangle text-warning my-3"
+                                                                        style="font-size:50px;"></i>
+                                                                    <h6>Apakah Anda yakin ingin menghapus data <span
+                                                                            class="font-weight-bold">Siswa </span>?,
+                                                                        data yang
+                                                                        sudah di
+                                                                        hapus tidak dapat dikembalikan lagi</h6>
+                                                                </center>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Batal</button>
+                                                                <button ng-click="HapusData()" type="button"
+                                                                    class="btn btn-danger">Hapus</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Content Wrapper -->
+                    </div>
+
+                </div>
+                <footer class="bottom-footer">
+                    <div class="text-light p-3 bck2">
+                        <div class=" ">
+                            <span class=" font-weight-bold montserrat" style="font-size: small;"> © 2021
+                                Copyright:</span>
+                            <a class=" font-weight-bold text-light montserrat" style="font-size: small;" href="">ANY
+                                Software House</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+        </div>
+        <div class="modal fade" id="modal_keluar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger">
+                        <h5 class="modal-title font-weight-bold text-light" id="exampleModalLabel">Keluar Aplikasi</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <i class="fas fa-exclamation-triangle text-warning my-3" style="font-size:50px;"></i>
+                            <h6 class="font-weight-bold">Apakah Anda yakin ingin keluar aplikasi?</h6>
+                        </center>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button ng-click="logout()" type="button" class="btn btn-danger">Keluar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
